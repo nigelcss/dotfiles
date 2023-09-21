@@ -9,6 +9,7 @@
 
 ## tmux
 `brew install tmux`
+`git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm`
 
 ## lazygit
 `brew install lazygit`
