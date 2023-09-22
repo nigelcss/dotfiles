@@ -16,3 +16,4 @@
 
 ## neovim
 `brew install neovim`
+`brew install ripgrep`
