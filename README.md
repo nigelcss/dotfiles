@@ -33,6 +33,11 @@ Settings->Keyboard->Keyboard Shortcuts->Modifier Keys->Caps Lock = ^ Control
 
 ## Setup
 
+### kitty
+`brew install powerlevel10k`
+
+`echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc`
+
 ### tmux
 `git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm`
 
