@@ -9,8 +9,6 @@
 ## lazygit
 `brew install lazygit`
 
-`$(brew --prefix)/opt/fzf/install`
-
 ## neovim
 `brew install neovim`
 
