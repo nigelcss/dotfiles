@@ -1,28 +1,28 @@
 # Dev Config
 
 ## kitty
-```
+```bash
 brew install kitty
 ```
 
 ## tmux
-```
+```bash
 brew install tmux
 ```
 
 ## lazygit
-```
+```bash
 brew install lazygit
 ```
 
 ## neovim
-```
+```bash
 brew install neovim
 brew install ripgrep
 ```
 
 ## Backup config
-```
+```zsh
 mv kitty ../kitty.bak && mv tmux ../tmux.bak && mv nvim ../nvim.bak
 ```
 
