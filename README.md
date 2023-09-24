@@ -31,3 +31,7 @@
 `git pull origin master --allow-unrelated-histories`
 
 `git push -u origin master`
+
+## Keyboard Shortcuts
+Settings->Keyboard->Keyboard Shortcuts->Modifier Keys->Caps Lock = ^ Control
+
