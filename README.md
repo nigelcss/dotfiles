@@ -1,7 +1,7 @@
 # Dev Config
 
 ## kitty
-```bash
+```sh
 brew install kitty
 ```
 
