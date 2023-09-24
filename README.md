@@ -38,6 +38,10 @@ Settings->Keyboard->Keyboard Shortcuts->Modifier Keys->Caps Lock = ^ Control
 
 `echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc`
 
+`source ~/.zshrc`
+
+Follow the prompts.
+
 ### tmux
 `git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm`
 
