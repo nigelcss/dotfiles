@@ -7,9 +7,6 @@
 `brew install tmux`
 `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
 
-## fzf
-`brew install fzf`
-
 ## lazygit
 `brew install lazygit`
 `$(brew --prefix)/opt/fzf/install`
