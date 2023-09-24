@@ -42,6 +42,13 @@ Settings->Keyboard->Keyboard Shortcuts->Modifier Keys->Caps Lock = ^ Control
 
 Follow the prompts.
 
+Add the following aliases to ~/.zshrc (replace <session> as you like)
+```
+alias t="tmux"
+alias ta="tmux attach"
+alias t-<session>="tmux attach-session -t <session>"
+```
+
 ### tmux
 `git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm`
 
