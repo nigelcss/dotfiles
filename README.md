@@ -1,7 +1,7 @@
 # Dev Config
 
 ## kitty
-`brew install kitty`
+```brew install kitty```
 
 ## tmux
 `brew install tmux`
