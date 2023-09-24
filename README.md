@@ -35,3 +35,20 @@
 ## Keyboard Shortcuts
 Settings->Keyboard->Keyboard Shortcuts->Modifier Keys->Caps Lock = ^ Control
 
+## Install
+
+### tmux
+`git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm`
+
+`tmux`
+
+`C+s r`
+
+`C+s I`
+
+### neovim
+`nvim`
+
+`Space+l S`
+
+
