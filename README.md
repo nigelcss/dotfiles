@@ -1,30 +1,38 @@
 # Dev Config
 
 ## kitty
-```brew install kitty```
+```
+brew install kitty
+```
 
 ## tmux
-`brew install tmux`
+```
+brew install tmux
+```
 
 ## lazygit
-`brew install lazygit`
+```
+brew install lazygit
+```
 
 ## neovim
-`brew install neovim`
-
-`brew install ripgrep`
+```
+brew install neovim
+brew install ripgrep
+```
 
 ## Backup config
-`mv kitty ../kitty.bak && mv tmux ../tmux.bak && mv nvim ../nvim.bak`
+```
+mv kitty ../kitty.bak && mv tmux ../tmux.bak && mv nvim ../nvim.bak
+```
 
 ## Clone config repo
-`git init`
-
-`git remote add origin https://github.com/nigelcss/config.git`
-
-`git pull origin master --allow-unrelated-histories`
-
-`git push -u origin master`
+```
+git init
+git remote add origin https://github.com/nigelcss/config.git
+git pull origin master --allow-unrelated-histories
+git push -u origin master
+```
 
 Add unversioned config files to .gitignore, commit and push.
 
@@ -34,11 +42,11 @@ Settings->Keyboard->Keyboard Shortcuts->Modifier Keys->Caps Lock = ^ Control
 ## Setup
 
 ### kitty
-`brew install powerlevel10k`
-
-`echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc`
-
-`source ~/.zshrc`
+```bash
+brew install powerlevel10k
+echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
+source ~/.zshrc
+```
 
 Follow the prompts.
 
@@ -50,17 +58,17 @@ alias t-<session>="tmux attach-session -t <session>"
 ```
 
 ### tmux
-`git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm`
-
-`tmux`
-
+```
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+tmux
+```
 `C+s r`
 
 `C+s I`
 
 ### neovim
-`nvim`
+```
+nvim
+```
 
 `Space+l S`
-
-
