@@ -26,8 +26,8 @@
 
 `echo * > .gitignore`
 
-`git remote add origin https://github.com/nigelcss/config/config.git`
+`git remote add origin https://github.com/nigelcss/config.git`
 
-`pull origin master --allow-unrelated-histories`
+`git pull origin master --allow-unrelated-histories`
 
 `git push -u origin master`
