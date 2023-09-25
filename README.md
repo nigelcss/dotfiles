@@ -1,6 +1,6 @@
 # Dev Config
 
-## kitty
+## zsh
 ```zsh
 brew install kitty
 ```
