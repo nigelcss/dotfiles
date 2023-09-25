@@ -57,6 +57,7 @@ alias t-<session>="tmux attach-session -t <session>"
 ### tmux
 ```zsh
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+rm -rf .tmux
 tmux
 ```
 `C+s r`
