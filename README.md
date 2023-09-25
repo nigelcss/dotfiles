@@ -28,7 +28,7 @@ mv kitty ../kitty.bak && mv tmux ../tmux.bak && mv nvim ../nvim.bak
 
 ## Clone config repo
 ```zsh
-git init
+git init -b main
 git remote add origin https://github.com/nigelcss/config.git
 git pull origin main --allow-unrelated-histories
 ```
