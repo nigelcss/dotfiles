@@ -31,7 +31,6 @@ mv kitty ../kitty.bak && mv tmux ../tmux.bak && mv nvim ../nvim.bak
 git init
 git remote add origin https://github.com/nigelcss/config.git
 git pull origin main --allow-unrelated-histories
-git push -u origin main
 ```
 
 Add unversioned config files to .gitignore, commit and push.
