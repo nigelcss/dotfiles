@@ -42,9 +42,7 @@ Settings->Keyboard->Keyboard Shortcuts->Modifier Keys->Caps Lock = ^ Control
 
 ### kitty
 ```zsh
-brew install powerlevel10k
-echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
-source ~/.zshrc
+brew install powerlevel10k && echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc && source ~/.zshrc
 ```
 
 Follow the prompts.
