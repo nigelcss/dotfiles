@@ -1,6 +1,6 @@
 # Dev Config
 
-## zsh
+## kitty
 ```zsh
 brew install kitty
 ```
@@ -40,7 +40,7 @@ Settings->Keyboard->Keyboard Shortcuts->Modifier Keys->Caps Lock = ^ Control
 
 ## Setup
 
-### kitty
+### zsh
 ```zsh
 brew install powerlevel10k && echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc && source ~/.zshrc
 ```
