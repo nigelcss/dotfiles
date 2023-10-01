@@ -4,18 +4,21 @@
 
 ```zsh
 brew install kitty
+nix-env -iA nixpkgs.kitty
 ```
 
 ## tmux
 
 ```zsh
 brew install tmux
+nix-env -iA nixpkgs.tmux
 ```
 
 ## lazygit
 
 ```zsh
 brew install lazygit
+nix-env -iA nixpkgs.lazygit
 ```
 
 ## neovim
@@ -23,6 +26,9 @@ brew install lazygit
 ```zsh
 brew install neovim
 brew install ripgrep
+
+nix-env -iA nixpkgs.neovim
+nix-env -iA nixpkgs.ripgrep
 ```
 
 ## Backup config
