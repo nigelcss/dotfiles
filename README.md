@@ -65,7 +65,7 @@ Add the following aliases to ~/.zshrc (replace session as you like)
 
 ```zsh
 alias t="tmux"
-alias ta="tmux attach"
+alias ta="tmux attach-session -t"
 alias tk="tmux kill-session -t"
 alias t-<session>="tmux attach-session -t <session>"
 ```
