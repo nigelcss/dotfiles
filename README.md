@@ -4,21 +4,18 @@
 
 ```zsh
 brew install kitty
-nix-env -iA nixpkgs.kitty
 ```
 
 ## tmux
 
 ```zsh
 brew install tmux
-nix-env -iA nixpkgs.tmux
 ```
 
 ## lazygit
 
 ```zsh
 brew install lazygit
-nix-env -iA nixpkgs.lazygit
 ```
 
 ## neovim
@@ -26,9 +23,6 @@ nix-env -iA nixpkgs.lazygit
 ```zsh
 brew install neovim
 brew install ripgrep
-
-nix-env -iA nixpkgs.neovim
-nix-env -iA nixpkgs.ripgrep
 ```
 
 ## Backup config
@@ -65,9 +59,9 @@ Add the following aliases to ~/.zshrc (replace session as you like)
 
 ```zsh
 alias t="tmux"
-alias ta="tmux attach-session -t"
+alias ta="tmux new -A -s"
+alias td='tmux new -A -s "${PWD:t}"'
 alias tk="tmux kill-session -t"
-alias t-<session>="tmux attach-session -t <session>"
 ```
 
 ### tmux
@@ -78,9 +72,9 @@ rm -rf .tmux
 tmux
 ```
 
-`C+s r`
+`C+a r`
 
-`C+s I`
+`C+a I`
 
 ### neovim
 
