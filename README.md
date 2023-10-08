@@ -58,9 +58,9 @@ Follow the prompts.
 Add the following aliases to ~/.zshrc (replace session as you like)
 
 ```zsh
-alias t="tmux"
+alias t='tmux new -A -s "${PWD:t}"'
+alias th="tmux new -A -s $USER"
 alias ta="tmux new -A -s"
-alias td='tmux new -A -s "${PWD:t}"'
 alias tk="tmux kill-session -t"
 
 alias lg="lazygit"
