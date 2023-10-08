@@ -62,6 +62,8 @@ alias t="tmux"
 alias ta="tmux new -A -s"
 alias td='tmux new -A -s "${PWD:t}"'
 alias tk="tmux kill-session -t"
+
+alias lg="lazygit"
 ```
 
 ### tmux
