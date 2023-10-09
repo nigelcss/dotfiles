@@ -18,6 +18,12 @@ brew install tmux
 brew install lazygit
 ```
 
+## vifm
+
+```zsh
+brew install vifm
+```
+
 ## neovim
 
 ```zsh
