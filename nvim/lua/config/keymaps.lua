@@ -2,7 +2,7 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-vim.keymap.set("n", "<leader>t", vim.cmd.UndotreeToggle)
+vim.keymap.set("n", "<leader>n", vim.cmd.UndotreeToggle)
 
 vim.keymap.set("n", "<C-h>", vim.cmd.TmuxNavigateLeft)
 vim.keymap.set("n", "<C-j>", vim.cmd.TmuxNavigateDown)
