@@ -63,15 +63,15 @@ brew install powerlevel10k && echo "source $(brew --prefix)/share/powerlevel10k/
 
 Follow the prompts.
 
-Add the following aliases to ~/.zshrc (replace session as you like)
+Add the following aliases to ~/.zshrc
 
 ```zsh
 alias t='tmux new -A -s "${PWD:t}"'
 alias th="tmux new -A -s $USER"
 alias ta="tmux new -A -s"
 alias tk="tmux kill-session -t"
-
 alias lg="lazygit"
+alias np="nvim ."
 ```
 
 ### tmux
