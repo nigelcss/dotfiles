@@ -1,4 +1,4 @@
-# Dev Config
+# installation and dotfiles
 
 ## kitty
 
