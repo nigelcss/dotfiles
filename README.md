@@ -71,7 +71,7 @@ alias th="tmux new -A -s $USER"
 alias ta="tmux new -A -s"
 alias tk="tmux kill-session -t"
 alias lg="lazygit"
-alias np="nvim ."
+alias n="nvim ."
 ```
 
 ### tmux
