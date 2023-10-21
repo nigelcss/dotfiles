@@ -13,8 +13,3 @@ vim.keymap.set({ "n", "i", "v" }, "<A-h>", vim.cmd.TmuxResizeLeft, { desc = "Res
 vim.keymap.set({ "n", "i", "v" }, "<A-j>", vim.cmd.TmuxResizeDown, { desc = "Resize Down" })
 vim.keymap.set({ "n", "i", "v" }, "<A-k>", vim.cmd.TmuxResizeUp, { desc = "Resize Up" })
 vim.keymap.set({ "n", "i", "v" }, "<A-l>", vim.cmd.TmuxResizeRight, { desc = "Resize Right" })
-
-vim.keymap.set("n", "<C-A-h>", vim.cmd.DapStepOut, { desc = "Step Out" })
-vim.keymap.set("n", "<C-A-j>", vim.cmd.DapStepOver, { desc = "Step Over" })
-vim.keymap.set("n", "<C-A-k>", vim.cmd.DapContinue, { desc = "Continue" })
-vim.keymap.set("n", "<C-A-l>", vim.cmd.DapStepInto, { desc = "Step Into" })
