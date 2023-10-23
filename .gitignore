@@ -11,3 +11,4 @@ mc
 tmux/plugins
 vifm/vifminfo.json
 gcloud
+nvim/lazy-lock.json
