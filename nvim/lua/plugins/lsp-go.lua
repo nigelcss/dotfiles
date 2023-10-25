@@ -36,7 +36,6 @@ return {
               usePlaceholders = true,
               completeUnimported = true,
               staticcheck = true,
-              buildFlags = { "-tags=test" },
               directoryFilters = { "-.git", "-.vscode", "-.idea", "-.vscode-test", "-node_modules" },
               semanticTokens = true,
             },
