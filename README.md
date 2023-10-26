@@ -5,7 +5,7 @@
 ```zsh
 brew install kitty
 brew tap homebrew/cask-fonts
-brew install font-hack-nerd-font
+brew install font-jetbrains-mono-nerd-font
 ```
 
 ## tmux
