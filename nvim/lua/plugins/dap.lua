@@ -10,28 +10,28 @@ return {
       desc = "Continue",
     },
     {
-      "<C-Left>",
+      "<S-M-h>",
       function()
         require("dap").step_out()
       end,
       desc = "Step Out",
     },
     {
-      "<C-Down>",
+      "<S-M-j>",
       function()
         require("dap").step_over()
       end,
       desc = "Step Over",
     },
     {
-      "<C-Up>",
+      "<S-M-k>",
       function()
         require("dap").continue()
       end,
       desc = "Continue",
     },
     {
-      "<C-Right>",
+      "<S-M-l>",
       function()
         require("dap").step_into()
       end,
