@@ -66,6 +66,8 @@ Follow the prompts.
 Add the following aliases to ~/.zshrc
 
 ```zsh
+alias dv='XDG_CONFIG_HOME="$HOME/.config/nvim-profiles/diff" XDG_DATA_HOME="$HOME/.local/share/nvim-profiles/diff" XDG_CACHE_HOME="$HOME/.cache/nvim-profiles/diff" nvim -d -c "wincmd l" -c "norm ]c"'
+
 alias t='tmux new -A -s "${PWD:t}"'
 alias th="tmux new -A -s $USER"
 alias ta="tmux new -A -s"
@@ -93,3 +95,20 @@ nvim
 ```
 
 `Space+l S`
+
+### gitconfig
+```
+[diff]
+  tool = nvim
+[difftool "nvim"]
+  cmd = "XDG_CONFIG_HOME=\"$HOME/.config/nvim-profiles/diff\" XDG_DATA_HOME=\"$HOME/.local/share/nvim-profiles/diff\" XDG_CACHE_HOME=\"$HOME/.cache/nvim-profiles/diff\" nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$REMOTE\""
+  path = 
+[merge]
+  tool = nvim3x
+[mergetool]
+	keepBackup = false
+[mergetool "nvim3x"]
+	cmd = "XDG_CONFIG_HOME=\"$HOME/.config/nvim-profiles/diff\" XDG_DATA_HOME=\"$HOME/.local/share/nvim-profiles/diff\" XDG_CACHE_HOME=\"$HOME/.cache/nvim-profiles/diff\" nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\""
+[mergetool "nvim4x"]
+	cmd = "XDG_CONFIG_HOME=\"$HOME/.config/nvim-profiles/diff\" XDG_DATA_HOME=\"$HOME/.local/share/nvim-profiles/diff\" XDG_CACHE_HOME=\"$HOME/.cache/nvim-profiles/diff\" nvim -d -c \"wincmd l\" -c \"norm ]c\" \"$LOCAL\" \"$BASE\" \"$REMOTE\" \"$MERGED\""
+```
