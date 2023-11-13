@@ -20,5 +20,14 @@ config.font_size = 14
 
 config.enable_tab_bar = false
 
+config.enable_scroll_bar = false
+
+config.window_padding = {
+	left = 3,
+	right = 3,
+	top = 3,
+	bottom = 3,
+}
+
 -- and finally, return the configuration to wezterm
 return config
