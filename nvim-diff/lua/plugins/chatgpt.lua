@@ -15,6 +15,7 @@ return {
       { "<leader>cs", "<cmd>ChatGPTRun summarize<cr>", mode = "v", desc = "Summarize (ChatGPT)" },
       { "<leader>cb", "<cmd>ChatGPTRun fix_bugs<cr>", mode = "v", desc = "Fix Bugs (ChatGPT)" },
       { "<leader>ce", "<cmd>ChatGPTRun explain_code<cr>", mode = "v", desc = "Explain Code (ChatGPT)" },
+      { "<leader>cc", "<cmd>ChatGPTRun complete_code<cr>", mode = "v", desc = "Complete Code (ChatGPT)" },
       {
         "<leader>cr",
         "<cmd>ChatGPTRun code_readability_analysis<cr>",
