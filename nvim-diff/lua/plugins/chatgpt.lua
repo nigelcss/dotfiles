@@ -9,12 +9,13 @@ return {
     },
     keys = {
       { "<leader>cg", "<cmd>ChatGPTRun grammar_correction<cr>", mode = "v", desc = "Correct Grammar (ChatGPT)" },
+      { "<leader>ce", "<cmd>ChatGPTEditWithInstructions<cr>", mode = "v", desc = "Edit Code (ChatGPT)" },
       { "<leader>cd", "<cmd>ChatGPTRun docstring<cr>", mode = "v", desc = "Comment Code (ChatGPT)" },
       { "<leader>ct", "<cmd>ChatGPTRun add_test<scr>", mode = "v", desc = "Add Tests (ChatGPT)" },
       { "<leader>co", "<cmd>ChatGPTRun optimize_code<cr>", mode = "v", desc = "Optimize Code (ChatGPT)" },
       { "<leader>cs", "<cmd>ChatGPTRun summarize<cr>", mode = "v", desc = "Summarize (ChatGPT)" },
       { "<leader>cb", "<cmd>ChatGPTRun fix_bugs<cr>", mode = "v", desc = "Fix Bugs (ChatGPT)" },
-      { "<leader>ce", "<cmd>ChatGPTRun explain_code<cr>", mode = "v", desc = "Explain Code (ChatGPT)" },
+      { "<leader>cx", "<cmd>ChatGPTRun explain_code<cr>", mode = "v", desc = "Explain Code (ChatGPT)" },
       { "<leader>cc", "<cmd>ChatGPTRun complete_code<cr>", mode = "v", desc = "Complete Code (ChatGPT)" },
       {
         "<leader>cr",
