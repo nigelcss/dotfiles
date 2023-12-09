@@ -8,8 +8,8 @@ vim.keymap.set("n", "<leader>n", vim.cmd.UndotreeToggle, { desc = "Toggle Undotr
 
 vim.keymap.set("n", "<leader>D", vim.cmd.DBUIToggle, { desc = "Toggle Debug UI" })
 
-vim.keymap.set("n", "<leader>pl", "<cmd>Octo pr list<cr>", { desc = "List PR's" })
-vim.keymap.set("n", "<leader>pn", "<cmd>Octo pr create<cr>", { desc = "Create a new PR" })
+vim.keymap.set("n", "<leader>gpl", "<cmd>Octo pr list<cr>", { desc = "list" })
+vim.keymap.set("n", "<leader>gpn", "<cmd>Octo pr create<cr>", { desc = "create" })
 
 vim.keymap.set("n", "<C-h>", vim.cmd.TmuxNavigateLeft, { desc = "Navigate Left" })
 vim.keymap.set("n", "<C-j>", vim.cmd.TmuxNavigateDown, { desc = "Navigate Down" })
