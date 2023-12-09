@@ -6,9 +6,10 @@ vim.keymap.set("n", "<leader>o", vim.cmd.AerialToggle, { desc = "Toggle Aerial" 
 
 vim.keymap.set("n", "<leader>n", vim.cmd.UndotreeToggle, { desc = "Toggle Undotree" })
 
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+vim.keymap.set("n", "<leader>D", vim.cmd.DBUIToggle, { desc = "Toggle Debug UI" })
 
-vim.keymap.set("n", "<leader>D", vim.cmd.DBUIToggle, { desc = "Toggle Undotree" })
+vim.keymap.set("n", "<leader>pl", "<cmd>Octo pr list<cr>", { desc = "List PR's" })
+vim.keymap.set("n", "<leader>pn", "<cmd>Octo pr create<cr>", { desc = "Create a new PR" })
 
 vim.keymap.set("n", "<C-h>", vim.cmd.TmuxNavigateLeft, { desc = "Navigate Left" })
 vim.keymap.set("n", "<C-j>", vim.cmd.TmuxNavigateDown, { desc = "Navigate Down" })
