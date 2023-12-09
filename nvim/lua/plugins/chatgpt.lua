@@ -46,7 +46,7 @@ return {
         },
         chat = {
           welcome_message = WELCOME_MESSAGE,
-          loading_text = "Loading, please wait ...",
+          loading_text = "Thinking, please wait ...",
           question_sign = "", -- 🙂
           answer_sign = "ﮧ", -- 🤖
           max_line_length = 120,
