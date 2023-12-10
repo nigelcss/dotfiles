@@ -8,25 +8,20 @@ return {
       "nvim-telescope/telescope.nvim",
     },
     keys = {
-      { "<leader>cg", "<cmd>ChatGPTRun grammar_correction<cr>", mode = "v", desc = "Correct Grammar (ChatGPT)" },
-      { "<leader>ce", "<cmd>ChatGPTEditWithInstructions<cr>", mode = "v", desc = "Edit Code (ChatGPT)" },
-      { "<leader>cd", "<cmd>ChatGPTRun docstring<cr>", mode = "v", desc = "Comment Code (ChatGPT)" },
-      { "<leader>ct", "<cmd>ChatGPTRun add_test<scr>", mode = "v", desc = "Add Tests (ChatGPT)" },
-      { "<leader>co", "<cmd>ChatGPTRun optimize_code<cr>", mode = "v", desc = "Optimize Code (ChatGPT)" },
-      { "<leader>cs", "<cmd>ChatGPTRun summarize<cr>", mode = "v", desc = "Summarize (ChatGPT)" },
-      { "<leader>cb", "<cmd>ChatGPTRun fix_bugs<cr>", mode = "v", desc = "Fix Bugs (ChatGPT)" },
-      { "<leader>cx", "<cmd>ChatGPTRun explain_code<cr>", mode = "v", desc = "Explain Code (ChatGPT)" },
-      { "<leader>cc", "<cmd>ChatGPTRun complete_code<cr>", mode = "v", desc = "Complete Code (ChatGPT)" },
-      {
-        "<leader>cr",
-        "<cmd>ChatGPTRun code_readability_analysis<cr>",
-        mode = "v",
-        desc = "Analyse Code for Readability (ChatGPT)",
-      },
+      { "<leader>ccg", "<cmd>ChatGPTRun grammar_correction<cr>", mode = { "n", "v" }, desc = "Correct Grammar" },
+      { "<leader>ccm", "<cmd>ChatGPTRun docstring<cr>", mode = "v", desc = "Comment" },
+      { "<leader>cce", "<cmd>ChatGPTEditWithInstructions<cr>", mode = "v", desc = "Edit" },
+      { "<leader>cct", "<cmd>ChatGPTRun add_test<cr>", mode = "v", desc = "Add Tests" },
+      { "<leader>cco", "<cmd>ChatGPTRun optimize_code<cr>", mode = "v", desc = "Optimize" },
+      { "<leader>ccs", "<cmd>ChatGPTRun summarize<cr>", mode = "v", desc = "Summarize" },
+      { "<leader>ccb", "<cmd>ChatGPTRun fix_bugs<cr>", mode = "v", desc = "Fix Bugs" },
+      { "<leader>ccx", "<cmd>ChatGPTRun explain_code<cr>", mode = "v", desc = "Explain" },
+      { "<leader>ccc", "<cmd>ChatGPTRun complete_code<cr>", mode = "v", desc = "Complete" },
+      { "<leader>ccr", "<cmd>ChatGPTRun code_readability_analysis<cr>", mode = "v", desc = "Analyse Readability" },
     },
     config = function()
       require("chatgpt").setup({
-        api_key_cmd = "lpass show --password chatgpt",
+        api_key_cmd = "security find-generic-password -w -s chatgpt",
         yank_register = "+",
         edit_with_instructions = {
           diff = false,
@@ -41,7 +36,7 @@ return {
         },
         chat = {
           welcome_message = WELCOME_MESSAGE,
-          loading_text = "Loading, please wait ...",
+          loading_text = "Thinking, please wait ...",
           question_sign = "", -- 🙂
           answer_sign = "ﮧ", -- 🤖
           max_line_length = 120,
