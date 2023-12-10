@@ -21,8 +21,7 @@ return {
     },
     config = function()
       require("chatgpt").setup({
-        api_key_cmd = "lpass show --password chatgpt",
-        yank_register = "+",
+        api_key_cmd = "security something",
         edit_with_instructions = {
           diff = false,
           keymaps = {
