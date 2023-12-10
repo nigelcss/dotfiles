@@ -5,6 +5,8 @@
 vim.g.tmux_resizer_resize_count = 3
 vim.g.tmux_resizer_vertical_resize_count = 6
 
+vim.g.minipairs_disable = true
+
 vim.opt.incsearch = false
 
 vim.opt.spelllang = "en_us"
