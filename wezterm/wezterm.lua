@@ -11,7 +11,7 @@ if wezterm.config_builder then
 end
 
 -- This is where you actually apply your config choices
-config.color_scheme = "Tokyo Night Moon"
+config.color_scheme = "Dracula"
 
 config.font = wezterm.font("JetBrainsMonoNL Nerd Font")
 config.font_size = 14
