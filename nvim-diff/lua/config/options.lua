@@ -6,4 +6,7 @@ vim.g.tmux_resizer_resize_count = 3
 vim.g.tmux_resizer_vertical_resize_count = 6
 
 vim.opt.incsearch = false
+
+vim.opt.spelllang = "en_us"
 vim.opt.spell = true
+vim.opt.spelloptions = "camel"
