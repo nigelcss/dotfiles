@@ -163,6 +163,7 @@ return {
           n = 1,
         },
         use_openai_functions_for_edits = false,
+        //use_openai_functions_for_edits = true,
         actions_paths = {},
         show_quickfixes_cmd = "Trouble quickfix",
         predefined_chat_gpt_prompts = "https://raw.githubusercontent.com/f/awesome-chatgpt-prompts/main/prompts.csv",
