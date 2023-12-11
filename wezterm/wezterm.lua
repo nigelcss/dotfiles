@@ -13,7 +13,7 @@ end
 -- This is where you actually apply your config choices
 config.color_scheme = "Dracula"
 
-config.font = wezterm.font("JetBrainsMonoNL Nerd Font", { weight = "ExtraLight" })
+config.font = wezterm.font("JetBrainsMonoNL Nerd Font", { weight = "Light" })
 config.font_size = 14
 
 config.enable_tab_bar = false
