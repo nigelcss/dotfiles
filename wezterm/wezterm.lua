@@ -13,7 +13,7 @@ end
 -- This is where you actually apply your config choices
 config.color_scheme = "Gruvbox"
 
-config.font = wezterm.font("JetBrainsMonoNL Nerd Font", { weight = "Regular" })
+config.font = wezterm.font("JetBrainsMonoNL Nerd Font", { weight = "Book" })
 config.font_size = 14
 
 config.enable_tab_bar = false
