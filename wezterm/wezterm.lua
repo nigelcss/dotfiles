@@ -11,7 +11,7 @@ if wezterm.config_builder then
 end
 
 -- This is where you actually apply your config choices
-config.color_scheme = "Gruvbox"
+config.color_scheme = "Gruvbox dark, medium (base16)"
 
 config.font = wezterm.font("JetBrainsMonoNL Nerd Font", { weight = "Regular" })
 config.font_size = 14
