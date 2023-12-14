@@ -4,6 +4,7 @@
 
 vim.keymap.set("n", "<leader>o", vim.cmd.AerialToggle, { desc = "Toggle Aerial" })
 vim.keymap.set("n", "<leader>n", vim.cmd.UndotreeToggle, { desc = "Toggle Undotree" })
+vim.keymap.set("n", "<leader>C", "<cmd>ChatGPT<cr>", { desc = "ChatGPT" })
 
 vim.keymap.set("n", "<C-h>", ":diffget local<CR>", { desc = "Get LOCAL" })
 vim.keymap.set("n", "<C-j>", "]c", { desc = "Prev Change" })
