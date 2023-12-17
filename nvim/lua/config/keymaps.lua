@@ -2,6 +2,10 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+vim.keymap.set("n", "<leader>gg", vim.cmd.LazyGit, { desc = "Lazygit" })
+vim.keymap.set("n", "<leader>gG", vim.cmd.LazyGitCurrentFile, { desc = "Lazygit (cwd)" })
+vim.keymap.set("n", "<leader>gf", vim.cmd.LazyGitFilterCurrentFile, { desc = "File commits" })
+
 vim.keymap.set("n", "<leader>o", vim.cmd.AerialToggle, { desc = "Toggle Aerial" })
 
 vim.keymap.set("n", "<leader>n", vim.cmd.UndotreeToggle, { desc = "Toggle Undotree" })
