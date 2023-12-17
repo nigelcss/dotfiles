@@ -2,11 +2,17 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+vim.keymap.set("n", "<leader>gg", vim.cmd.LazyGit, { desc = "Lazygit" })
+vim.keymap.set("n", "<leader>gG", vim.cmd.LazyGitCurrentFile, { desc = "Lazygit (cwd)" })
+vim.keymap.set("n", "<leader>gf", vim.cmd.LazyGitFilterCurrentFile, { desc = "File commits" })
+
 vim.keymap.set("n", "<leader>o", vim.cmd.AerialToggle, { desc = "Toggle Aerial" })
 
 vim.keymap.set("n", "<leader>n", vim.cmd.UndotreeToggle, { desc = "Toggle Undotree" })
 
 vim.keymap.set("n", "<leader>D", vim.cmd.DBUIToggle, { desc = "Toggle Debug UI" })
+
+vim.keymap.set("n", "<leader>C", "<cmd>ChatGPT<cr>", { desc = "ChatGPT" })
 
 vim.keymap.set("n", "<leader>gpl", "<cmd>Octo pr list<cr>", { desc = "list" })
 vim.keymap.set("n", "<leader>gpn", "<cmd>Octo pr create<cr>", { desc = "create" })
