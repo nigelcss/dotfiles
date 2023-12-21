@@ -6,6 +6,7 @@ return {
       ["css"] = { "prettier" },
       ["scss"] = { "prettier" },
       ["yaml"] = { "prettier" },
+      ["json"] = { "prettier" },
     },
   },
 }
