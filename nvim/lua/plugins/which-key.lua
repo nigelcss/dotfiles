@@ -5,6 +5,7 @@ return {
       ["<leader>gp"] = { name = "+Pull Request" },
       ["<leader>h"] = { name = "+harpoon" },
       ["<leader>cc"] = { name = "+chatgpt" },
+      ["<leader>o"] = { name = "+obsidian" },
     },
   },
 }

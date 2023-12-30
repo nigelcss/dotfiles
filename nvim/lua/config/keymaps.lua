@@ -13,7 +13,18 @@ vim.keymap.set("n", "<leader>gg", vim.cmd.LazyGit, { desc = "Lazygit" })
 vim.keymap.set("n", "<leader>gG", vim.cmd.LazyGitCurrentFile, { desc = "Lazygit (cwd)" })
 vim.keymap.set("n", "<leader>gf", vim.cmd.LazyGitFilterCurrentFile, { desc = "File commits" })
 
-vim.keymap.set("n", "<leader>o", vim.cmd.AerialToggle, { desc = "Toggle Aerial" })
+vim.keymap.set("n", "<leader>os", vim.cmd.ObsidianSearch, { desc = "Search for Note" })
+vim.keymap.set("n", "<leader>oq", vim.cmd.ObsidianQuickSwitch, { desc = "Quick Switch" })
+vim.keymap.set("n", "<leader>on", vim.cmd.ObsidianNew, { desc = "New Note" })
+vim.keymap.set("n", "<leader>of", vim.cmd.ObsidianFollowLink, { desc = "Follow Link" })
+vim.keymap.set("n", "<leader>ob", vim.cmd.ObsidianBacklinks, { desc = "Show Backlinks" })
+vim.keymap.set("n", "<leader>ot", vim.cmd.ObsidianTemplate, { desc = "Insert Template" })
+vim.keymap.set("v", "<leader>ol", vim.cmd.ObsidianLink, { desc = "Link" })
+vim.keymap.set("v", "<leader>ow", vim.cmd.ObsidianLinkNew, { desc = "Link New Note" })
+vim.keymap.set("n", "<leader>op", vim.cmd.ObsidianPasteImg, { desc = "Paste Image" })
+vim.keymap.set("n", "<leader>oo", vim.cmd.ObsidianOpen, { desc = "Open in App" })
+
+vim.keymap.set("n", "<leader>O", vim.cmd.AerialToggle, { desc = "Toggle Aerial" })
 
 vim.keymap.set("n", "<leader>n", vim.cmd.UndotreeToggle, { desc = "Toggle Undotree" })
 
