@@ -24,6 +24,8 @@ vim.keymap.set("v", "<leader>ow", vim.cmd.ObsidianLinkNew, { desc = "Link New No
 vim.keymap.set("n", "<leader>op", vim.cmd.ObsidianPasteImg, { desc = "Paste Image" })
 vim.keymap.set("n", "<leader>oo", vim.cmd.ObsidianOpen, { desc = "Open in App" })
 
+vim.keymap.set("n", "<leader>z", vim.cmd.ZenMode, { desc = "Toggle Zen Mode" })
+
 vim.keymap.set("n", "<leader>O", vim.cmd.AerialToggle, { desc = "Toggle Aerial" })
 
 vim.keymap.set("n", "<leader>n", vim.cmd.UndotreeToggle, { desc = "Toggle Undotree" })
