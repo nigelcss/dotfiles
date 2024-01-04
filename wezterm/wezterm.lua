@@ -1,6 +1,8 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
 
+local enable_tab_bar = false
+
 wezterm.on("user-var-changed", function(window, pane, name, value)
 	local overrides = window:get_config_overrides() or {}
 	if name == "ZEN_MODE" then
@@ -15,7 +17,7 @@ wezterm.on("user-var-changed", function(window, pane, name, value)
 		elseif number_value < 0 then
 			window:perform_action(wezterm.action.ResetFontSize, pane)
 			overrides.font_size = nil
-			overrides.enable_tab_bar = true
+			overrides.enable_tab_bar = enable_tab_bar
 		else
 			overrides.font_size = number_value
 			overrides.enable_tab_bar = false
