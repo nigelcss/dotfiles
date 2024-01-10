@@ -10,6 +10,13 @@ return {
       desc = "Continue",
     },
     {
+      "<leader>dR",
+      function()
+        require("dap").restart()
+      end,
+      desc = "Restart",
+    },
+    {
       "<C-M-h>",
       function()
         require("dap").step_out()
