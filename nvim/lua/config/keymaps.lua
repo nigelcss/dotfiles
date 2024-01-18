@@ -9,6 +9,13 @@ vim.keymap.set("n", "}", "}zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+vim.keymap.set(
+  "v",
+  "<leader>sv",
+  "\"zy<cmd>exec 'Telescope grep_string default_text=' . escape(@z, ' ')<cr>",
+  { desc = "Visual Selection" }
+)
+
 vim.keymap.set("n", "<leader>gg", vim.cmd.LazyGit, { desc = "Lazygit" })
 vim.keymap.set("n", "<leader>gG", vim.cmd.LazyGitCurrentFile, { desc = "Lazygit (cwd)" })
 vim.keymap.set("n", "<leader>gf", vim.cmd.LazyGitFilterCurrentFile, { desc = "File commits" })
