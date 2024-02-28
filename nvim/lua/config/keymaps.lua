@@ -2,6 +2,8 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+local Util = require("lazyvim.util")
+
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "{", "{zz")
@@ -15,6 +17,13 @@ vim.keymap.set(
   "\"zy<cmd>exec 'Telescope grep_string default_text=' . escape(@z, ' ')<cr>",
   { desc = "Visual Selection" }
 )
+
+vim.keymap.set("n", "<leader>gf", function()
+  Util.terminal(
+    { "lazygit", "-f", vim.api.nvim_buf_get_name(0) },
+    { cwd = Util.root(), esc_esc = false, ctrl_hjkl = false }
+  )
+end, { desc = "Lazygit File" })
 
 vim.keymap.set("n", "<leader>os", vim.cmd.ObsidianSearch, { desc = "Search for Note" })
 vim.keymap.set("n", "<leader>oq", vim.cmd.ObsidianQuickSwitch, { desc = "Quick Switch" })
