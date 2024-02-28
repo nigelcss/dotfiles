@@ -16,10 +16,6 @@ vim.keymap.set(
   { desc = "Visual Selection" }
 )
 
-vim.keymap.set("n", "<leader>gg", vim.cmd.LazyGit, { desc = "Lazygit" })
-vim.keymap.set("n", "<leader>gG", vim.cmd.LazyGitCurrentFile, { desc = "Lazygit (cwd)" })
-vim.keymap.set("n", "<leader>gf", vim.cmd.LazyGitFilterCurrentFile, { desc = "File commits" })
-
 vim.keymap.set("n", "<leader>os", vim.cmd.ObsidianSearch, { desc = "Search for Note" })
 vim.keymap.set("n", "<leader>oq", vim.cmd.ObsidianQuickSwitch, { desc = "Quick Switch" })
 vim.keymap.set("n", "<leader>on", vim.cmd.ObsidianNew, { desc = "New Note" })
