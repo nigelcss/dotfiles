@@ -4,7 +4,7 @@ return {
     {
       "<leader>dc",
       function()
-        require("dap.ext.vscode").load_launchjs(".nvim/launch.json")
+        require("dap.ext.vscode").load_launchjs(".config/launch.json")
         require("dap").continue()
       end,
       desc = "Continue",
