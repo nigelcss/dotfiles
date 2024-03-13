@@ -47,7 +47,7 @@ vim.keymap.set("n", "<leader>D", vim.cmd.DBUIToggle, { desc = "Toggle Debug UI" 
 
 vim.keymap.set("n", "<leader>C", "<cmd>ChatGPT<cr>", { desc = "ChatGPT" })
 
-vim.keymap.set("n", "<leader>go", "<cmd>Octo<cr>", { desc = "Octo" })
+vim.keymap.set({ "n", "v" }, "<leader>go", "<cmd>Octo<cr>", { desc = "Octo" })
 vim.keymap.set("n", "<leader>gpl", "<cmd>Octo pr list<cr>", { desc = "list" })
 vim.keymap.set("n", "<leader>gpn", "<cmd>Octo pr create<cr>", { desc = "create" })
 
