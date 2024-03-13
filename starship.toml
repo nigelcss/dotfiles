@@ -70,7 +70,6 @@ truncation_symbol = "…/"
 "Downloads" = " "
 "Music" = "󰝚 "
 "Pictures" = " "
-"Developer" = "󰲋 "
 
 [git_branch]
 symbol = ""
@@ -142,9 +141,9 @@ format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
 disabled = true
 
 [character]
-disabled = true
-success_symbol = '[](bold fg:color_green)'
-error_symbol = '[](bold fg:color_red)'
+disabled = false
+success_symbol = '[❯](bold fg:color_yellow)'
+error_symbol = '[❯](bold fg:color_red)'
 vimcmd_symbol = '[](bold fg:color_green)'
 vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
 vimcmd_replace_symbol = '[](bold fg:color_purple)'
