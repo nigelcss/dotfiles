@@ -1,5 +1,8 @@
 return {
   "mfussenegger/nvim-dap",
+  dependencies = {
+    { "nvim-neotest/nvim-nio", lazy = true },
+  },
   keys = {
     {
       "<leader>dc",
