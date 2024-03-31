@@ -11,7 +11,7 @@ return {
       { "<leader>ccg", "<cmd>ChatGPTRun grammar_correction<cr>", mode = { "n", "v" }, desc = "Correct Grammar" },
       { "<leader>ccm", "<cmd>ChatGPTRun docstring<cr>", mode = "v", desc = "Comment" },
       { "<leader>cce", "<cmd>ChatGPTEditWithInstructions<cr>", mode = "v", desc = "Edit" },
-      { "<leader>cct", "<cmd>ChatGPTRun add_test<cr>", mode = "v", desc = "Add Tests" },
+      { "<leader>cct", "<cmd>ChatGPTRun add_tests<cr>", mode = "v", desc = "Add Tests" },
       { "<leader>cco", "<cmd>ChatGPTRun optimize_code<cr>", mode = "v", desc = "Optimize" },
       { "<leader>ccs", "<cmd>ChatGPTRun summarize<cr>", mode = "v", desc = "Summarize" },
       { "<leader>ccb", "<cmd>ChatGPTRun fix_bugs<cr>", mode = "v", desc = "Fix Bugs" },
