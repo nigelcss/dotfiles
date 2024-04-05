@@ -26,17 +26,6 @@ vim.keymap.set("n", "<leader>gf", function()
   )
 end, { desc = "Lazygit File" })
 
-vim.keymap.set("n", "<leader>os", vim.cmd.ObsidianSearch, { desc = "Search for Note" })
-vim.keymap.set("n", "<leader>oq", vim.cmd.ObsidianQuickSwitch, { desc = "Quick Switch" })
-vim.keymap.set("n", "<leader>on", vim.cmd.ObsidianNew, { desc = "New Note" })
-vim.keymap.set("n", "<leader>of", vim.cmd.ObsidianFollowLink, { desc = "Follow Link" })
-vim.keymap.set("n", "<leader>ob", vim.cmd.ObsidianBacklinks, { desc = "Show Backlinks" })
-vim.keymap.set("n", "<leader>ot", vim.cmd.ObsidianTemplate, { desc = "Insert Template" })
-vim.keymap.set("v", "<leader>ol", vim.cmd.ObsidianLink, { desc = "Link" })
-vim.keymap.set("v", "<leader>ow", vim.cmd.ObsidianLinkNew, { desc = "Link New Note" })
-vim.keymap.set("n", "<leader>op", vim.cmd.ObsidianPasteImg, { desc = "Paste Image" })
-vim.keymap.set("n", "<leader>oo", vim.cmd.ObsidianOpen, { desc = "Open in App" })
-
 vim.keymap.set("n", "<leader>z", vim.cmd.ZenMode, { desc = "Toggle Zen Mode" })
 
 vim.keymap.set("n", "<leader>O", vim.cmd.AerialToggle, { desc = "Toggle Aerial" })
