@@ -12,6 +12,9 @@ return {
     { "<leader>hh", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "Show harpoon marks" },
   },
   opts = {
+    global_settings = {
+      mark_branch = true,
+    },
     menu = {
       width = 90,
       height = 20,
