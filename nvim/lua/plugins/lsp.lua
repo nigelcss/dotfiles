@@ -7,6 +7,9 @@ return {
       keys[#keys + 1] = { "gd", "<cmd>Telescope lsp_definitions show_line=false<cr>", desc = "Goto Definition" }
     end,
     opts = {
+      inlay_hints = {
+        enabled = false,
+      },
       servers = { eslint = {} },
       setup = {
         eslint = function()

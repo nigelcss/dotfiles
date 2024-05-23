@@ -25,7 +25,7 @@ return {
 
   ---@type Ollama.Config
   opts = {
-    model = "llama2:13b",
+    model = "llama3",
     url = "http://127.0.0.1:11434",
     serve = {
       on_start = false,
