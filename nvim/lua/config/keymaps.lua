@@ -25,12 +25,15 @@ vim.keymap.set(
   ":!tmux new-window -c " .. vim.fn.getcwd() .. " -- lazygit <CR><CR>",
   { desc = "LazyGit", silent = true }
 )
-vim.keymap.set(
-  "n",
-  "<leader>gf",
-  ":!tmux new-window -c " .. vim.fn.getcwd() .. " -- lazygit -f " .. vim.api.nvim_buf_get_name(0) .. "<CR><CR>",
-  { desc = "LazyGit file", silent = true }
-)
+vim.keymap.set("n", "<leader>gf", function()
+  local current_file = vim.api.nvim_buf_get_name(0)
+  local cwd = vim.fn.getcwd()
+  local command = "tmux new-window -c "
+    .. vim.fn.shellescape(cwd)
+    .. " -- lazygit -f "
+    .. vim.fn.shellescape(current_file)
+  vim.fn.system(command)
+end, { desc = "LazyGit file", silent = true })
 
 vim.keymap.set("n", "<leader>z", vim.cmd.ZenMode, { desc = "Toggle Zen Mode" })
 
