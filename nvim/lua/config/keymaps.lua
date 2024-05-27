@@ -19,12 +19,18 @@ vim.keymap.set(
   { desc = "Visual Selection" }
 )
 
-vim.keymap.set("n", "<leader>gf", function()
-  Util.terminal(
-    { "lazygit", "-f", vim.api.nvim_buf_get_name(0) },
-    { cwd = Util.root(), esc_esc = false, ctrl_hjkl = false }
-  )
-end, { desc = "Lazygit File" })
+vim.keymap.set(
+  "n",
+  "<leader>gg",
+  ":!tmux new-window -c " .. vim.fn.getcwd() .. " -- lazygit <CR><CR>",
+  { desc = "LazyGit", silent = true }
+)
+vim.keymap.set(
+  "n",
+  "<leader>gf",
+  ":!tmux new-window -c " .. vim.fn.getcwd() .. " -- lazygit -f " .. vim.api.nvim_buf_get_name(0) .. "<CR><CR>",
+  { desc = "LazyGit file", silent = true }
+)
 
 vim.keymap.set("n", "<leader>z", vim.cmd.ZenMode, { desc = "Toggle Zen Mode" })
 
