@@ -10,7 +10,21 @@ return {
       inlay_hints = {
         enabled = false,
       },
-      servers = { eslint = {} },
+      servers = {
+        eslint = {},
+        vtsls = {
+          cmd = {
+            "yarn",
+            "dlx",
+            "@vtsls/language-server",
+            "--stdio",
+          },
+          root_dir = function(fname)
+            return require("lspconfig").util.root_pattern(".yarn")(fname)
+              or require("lspconfig").util.root_pattern("package.json", "tsconfig.json", ".git")(fname)
+          end,
+        },
+      },
       setup = {
         eslint = function()
           require("lazyvim.util").lsp.on_attach(function(client)
