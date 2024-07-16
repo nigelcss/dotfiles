@@ -1,7 +1,7 @@
 return {
   "folke/which-key.nvim",
   opts = {
-    defaults = {
+    specs = {
       ["<leader>gp"] = { name = "+Pull Request" },
       ["<leader>h"] = { name = "+harpoon" },
       ["<leader>cc"] = { name = "+chatgpt" },

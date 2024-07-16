@@ -1,7 +1,7 @@
 return {
   "folke/which-key.nvim",
   opts = {
-    defaults = {
+    specs = {
       ["<leader>cc"] = { name = "+chatgpt" },
     },
   },
