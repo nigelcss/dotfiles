@@ -4,7 +4,7 @@
 
 local Util = require("lazyvim.util")
 
-vim.keymap.set("n", "<leader>wa", "<cmd>wa<cr>", { desc = "Write all" })
+vim.keymap.set("n", "<C-s>", "<cmd>wa<cr>", { desc = "Write all" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "{", "{zz")
