@@ -25,6 +25,7 @@ vim.keymap.set(
   ":!tmux new-window -c " .. vim.fn.getcwd() .. " -- lazygit <CR><CR>",
   { desc = "LazyGit", silent = true }
 )
+
 vim.keymap.set("n", "<leader>gf", function()
   local current_file = vim.api.nvim_buf_get_name(0)
   local cwd = vim.fn.getcwd()
