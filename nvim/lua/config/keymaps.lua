@@ -12,12 +12,24 @@ vim.keymap.set("n", "}", "}zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set(
-  "v",
-  "<leader>sv",
-  "\"zy<cmd>exec 'Telescope grep_string default_text=' . escape(@z, ' ')<cr>",
-  { desc = "Visual Selection" }
-)
+vim.keymap.set("v", "<leader>sv", function()
+  vim.cmd('normal! "zy')
+  local text = vim.fn.getreg("z")
+  require("telescope.builtin").grep_string({
+    search = text,
+  })
+end, { desc = "Visual Selection" })
+
+vim.keymap.set("v", "<leader>ss", function()
+  vim.cmd('normal! "zy')
+  local text = vim.fn.getreg("z")
+  require("telescope.builtin").grep_string({
+    search = text,
+    additional_args = function(opts)
+      return { "--glob=*.css", "--glob=*.scss" }
+    end,
+  })
+end, { desc = "Search in stylesheets" })
 
 vim.keymap.set(
   "n",
