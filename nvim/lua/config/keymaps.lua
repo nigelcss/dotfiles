@@ -103,6 +103,64 @@ vim.keymap.set("n", "<leader>gf", function()
   vim.fn.system(command)
 end, { desc = "LazyGit file", silent = true })
 
+vim.keymap.set("v", "<leader>gl", function()
+  -- Get the buffer number, start line, and start column of the visual selection
+  local start_pos = vim.fn.getpos("v")
+  local end_pos = vim.fn.getpos(".")
+
+  -- Extract line numbers
+  local start_line = start_pos[2]
+  local end_line = end_pos[2]
+
+  -- Ensure the start line is less than the end line
+  if start_line > end_line then
+    start_line, end_line = end_line, start_line
+  end
+
+  -- Get the full path of the current file
+  local file_path = vim.fn.expand("%:p")
+
+  -- Construct the git log command
+  local git_cmd = {
+    "git",
+    "log",
+    "-L",
+    start_line .. "," .. end_line .. ":" .. file_path,
+  }
+
+  -- Run the command and capture the output
+  local output = vim.fn.systemlist(git_cmd)
+
+  -- Check for errors
+  if vim.v.shell_error ~= 0 then
+    vim.notify("Error running git log:\n" .. table.concat(output, "\n"), vim.log.levels.ERROR)
+    return
+  end
+
+  -- Create a new buffer in the current window
+  vim.cmd("enew") -- Equivalent to :enew command in Vim
+  local buf = vim.api.nvim_get_current_buf()
+
+  -- Set buffer options
+  vim.bo[buf].buftype = "nofile"
+  vim.bo[buf].bufhidden = "hide"
+  vim.bo[buf].swapfile = false
+  vim.bo[buf].modifiable = true
+  vim.bo[buf].filetype = "git" -- Enables git syntax highlighting
+
+  -- Set buffer name for identification
+  vim.api.nvim_buf_set_name(buf, "[Git Log] " .. vim.fn.fnamemodify(file_path, ":t"))
+
+  -- Insert the output into the buffer
+  vim.api.nvim_buf_set_lines(buf, 0, -1, false, output)
+
+  -- Disable modifiable to prevent editing
+  vim.bo[buf].modifiable = false
+
+  -- Move cursor to the top of the buffer
+  vim.api.nvim_win_set_cursor(0, { 1, 0 })
+end, { desc = "Git Log for selected lines", silent = true })
+
 vim.keymap.set("n", "<leader>z", vim.cmd.ZenMode, { desc = "Toggle Zen Mode" })
 
 vim.keymap.set("n", "<leader>O", vim.cmd.AerialToggle, { desc = "Toggle Aerial" })
