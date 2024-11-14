@@ -1,3 +1,7 @@
+local toggle_opts = {
+  height_in_lines = 24,
+}
+
 return {
   -- {{{ Define the Harpoon lazy.vim specificaiton.
 
@@ -84,7 +88,7 @@ return {
       {
         "<leader>hh",
         function()
-          harpoon.ui:toggle_quick_menu(harpoon:list())
+          harpoon.ui:toggle_quick_menu(harpoon:list(), toggle_opts)
         end,
         desc = "Harpoon Toggle Menu",
       },
@@ -119,6 +123,9 @@ return {
       tmux_autoclose_windows = false,
       excluded_filetypes = { "harpoon", "alpha", "dashboard", "gitcommit" },
       mark_branch = true,
+      toggle_opts = {
+        height_in_lines = 20,
+      },
       key = function()
         return vim.loop.cwd()
       end,
