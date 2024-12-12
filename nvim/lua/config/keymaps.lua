@@ -18,16 +18,13 @@ local function MoveBufferToNextWindow()
   local current_win = vim.api.nvim_get_current_win()
   local current_buf = vim.api.nvim_get_current_buf()
 
-  -- Get all windows in the current tabpage
   local all_wins = vim.api.nvim_tabpage_list_wins(0)
 
-  -- Function to check if a window's buffer is listed
   local function is_listed_buffer(win)
     local buf = vim.api.nvim_win_get_buf(win)
     return vim.fn.buflisted(buf) == 1
   end
 
-  -- Collect windows with listed buffers
   local wins = {}
   for _, win in ipairs(all_wins) do
     if is_listed_buffer(win) then
@@ -35,13 +32,11 @@ local function MoveBufferToNextWindow()
     end
   end
 
-  -- If there is only one window with a listed buffer, nothing to do
   if #wins <= 1 then
     print("No other window with a listed buffer to move to.")
     return
   end
 
-  -- Find the index of the current window in the filtered list
   local current_win_index = nil
   for i, win in ipairs(wins) do
     if win == current_win then
@@ -55,14 +50,22 @@ local function MoveBufferToNextWindow()
     return
   end
 
-  -- Calculate the index of the next window (wrap around if necessary)
   local next_win_index = (current_win_index % #wins) + 1
   local next_win = wins[next_win_index]
 
-  -- Swap the buffers between the current window and the next window
+  -- Save the buffer currently in the next window
   local next_buf = vim.api.nvim_win_get_buf(next_win)
+
+  -- Move the current buffer to the next window
   vim.api.nvim_win_set_buf(next_win, current_buf)
-  vim.api.nvim_win_set_buf(current_win, next_buf)
+
+  -- Go back to the current window and restore the previously visited buffer
+  vim.api.nvim_set_current_win(current_win)
+  vim.cmd("b#")
+
+  -- The above command switches this window to the previously visited buffer
+  -- If you'd rather explicitly set a buffer yourself, store it before the swap
+  -- and set it here instead of using `b#`.
 end
 
 -- Create a keymap to trigger the function (e.g., using <Leader>mb)
