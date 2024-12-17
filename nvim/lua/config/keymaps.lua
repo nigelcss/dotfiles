@@ -6,12 +6,6 @@ local Util = require("lazyvim.util")
 
 vim.keymap.set("n", "ZZ", ":wqa<CR>", { desc = "Save all and quit" })
 vim.keymap.set("n", "<C-s>", "<cmd>wa<cr>", { desc = "Write all" })
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "{", "{zz")
-vim.keymap.set("n", "}", "}zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
 
 -- Function to move the current buffer to the next window with a listed buffer
 local function MoveBufferToNextWindow()
@@ -71,22 +65,12 @@ end
 -- Create a keymap to trigger the function (e.g., using <Leader>mb)
 vim.keymap.set("n", "<leader>bm", MoveBufferToNextWindow, { desc = "Move buffer", silent = true })
 
-vim.keymap.set("v", "<leader>sv", function()
-  vim.cmd('normal! "zy')
-  local text = vim.fn.getreg("z")
-  require("telescope.builtin").grep_string({
-    search = text,
-  })
-end, { desc = "Visual Selection" })
-
 vim.keymap.set("v", "<leader>ss", function()
   vim.cmd('normal! "zy')
   local text = vim.fn.getreg("z")
-  require("telescope.builtin").grep_string({
+  require("fzf-lua").grep({
     search = text,
-    additional_args = function(opts)
-      return { "--glob=*.css", "--glob=*.scss" }
-    end,
+    rg_opts = "--column --line-number --glob=*.css --glob=*.scss",
   })
 end, { desc = "Search in stylesheets" })
 
@@ -164,8 +148,6 @@ vim.keymap.set("v", "<leader>gl", function()
   -- Move cursor to the top of the buffer
   vim.api.nvim_win_set_cursor(0, { 1, 0 })
 end, { desc = "Git Log for selected lines", silent = true })
-
-vim.keymap.set("n", "<leader>z", vim.cmd.ZenMode, { desc = "Toggle Zen Mode" })
 
 vim.keymap.set("n", "<leader>O", vim.cmd.AerialToggle, { desc = "Toggle Aerial" })
 
