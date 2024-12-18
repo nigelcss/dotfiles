@@ -6,6 +6,12 @@ local Util = require("lazyvim.util")
 
 vim.keymap.set("n", "ZZ", ":wqa<CR>", { desc = "Save all and quit" })
 vim.keymap.set("n", "<C-s>", "<cmd>wa<cr>", { desc = "Write all" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "{", "{zz")
+vim.keymap.set("n", "}", "}zz")
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 
 -- Function to move the current buffer to the next window with a listed buffer
 local function MoveBufferToNextWindow()
