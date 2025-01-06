@@ -80,6 +80,22 @@ vim.keymap.set("v", "<leader>ss", function()
   })
 end, { desc = "Search in stylesheets" })
 
+vim.keymap.set("v", "<leader>sa", function()
+  vim.cmd('normal! "zy')
+
+  local hookName = vim.fn.getreg("z")
+
+  local functionName = hookName:gsub("^use", ""):gsub("Query$", ""):gsub("Mutation$", "")
+  if #functionName > 0 then
+    functionName = functionName:sub(1, 1):lower() .. functionName:sub(2)
+  end
+
+  require("fzf-lua").grep({
+    search = functionName,
+    rg_opts = "--column --line-number --glob=*API.ts",
+  })
+end, { desc = "Search in APIs" })
+
 vim.keymap.set(
   "n",
   "<leader>gg",
