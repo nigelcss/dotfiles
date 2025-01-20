@@ -12,3 +12,9 @@ tmux/plugins
 vifm/vifminfo.json
 gcloud
 gh
+colima/_lima/colima
+colima
+dlv
+k9s
+node_modules
+thefuck/__pycache__/settings.cpython-312.pyc
