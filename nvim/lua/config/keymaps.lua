@@ -100,9 +100,16 @@ end, { desc = "Search in APIs" })
 
 vim.keymap.set(
   "n",
-  "<leader>gg",
+  "<leader>zg",
   ":!tmux new-window -c " .. vim.fn.getcwd() .. " -- lazygit <CR><CR>",
   { desc = "LazyGit", silent = true }
+)
+
+vim.keymap.set(
+  "n",
+  "<leader>zd",
+  ":!tmux new-window -c " .. vim.fn.getcwd() .. " -- lazydocker <CR><CR>",
+  { desc = "LazyDocker", silent = true }
 )
 
 vim.keymap.set("n", "<leader>gf", function()
@@ -172,6 +179,18 @@ vim.keymap.set("v", "<leader>gl", function()
   -- Move cursor to the top of the buffer
   vim.api.nvim_win_set_cursor(0, { 1, 0 })
 end, { desc = "Git Log for selected lines", silent = true })
+
+vim.keymap.set("n", "<leader>cg", function()
+  local filepath = vim.fn.expand("%:p")
+  if filepath == "" then
+    vim.notify("No file to format.", vim.log.levels.ERROR)
+    return
+  end
+
+  vim.cmd("!gofumpt -w " .. vim.fn.fnameescape(filepath))
+
+  vim.cmd("edit!")
+end, { desc = "Run gofumpt on the current file" })
 
 vim.keymap.set("n", "<leader>O", vim.cmd.AerialToggle, { desc = "Toggle Aerial" })
 
