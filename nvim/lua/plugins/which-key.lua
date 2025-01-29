@@ -1,8 +1,11 @@
 return {
-  "folke/which-key.nvim",
-  opts = {
-    specs = {
-      ["<leader>W"] = { name = "+vimwiki" },
+  {
+    "folke/which-key.nvim",
+    opts = {
+      spec = {
+        { "<leader>W", group = "vimwiki" },
+        { "<leader>k", group = "docker" },
+      },
     },
   },
 }

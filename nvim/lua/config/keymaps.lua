@@ -100,14 +100,14 @@ end, { desc = "Search in APIs" })
 
 vim.keymap.set(
   "n",
-  "<leader>zg",
+  "<leader>gg",
   ":!tmux new-window -c " .. vim.fn.getcwd() .. " -- lazygit <CR><CR>",
   { desc = "LazyGit", silent = true }
 )
 
 vim.keymap.set(
   "n",
-  "<leader>zd",
+  "<leader>kk",
   ":!tmux new-window -c " .. vim.fn.getcwd() .. " -- lazydocker <CR><CR>",
   { desc = "LazyDocker", silent = true }
 )
