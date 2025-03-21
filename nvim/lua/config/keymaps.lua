@@ -192,13 +192,60 @@ vim.keymap.set("n", "<leader>cg", function()
   vim.cmd("edit!")
 end, { desc = "Run gofumpt on the current file" })
 
+-- Cursor maps
+
+local function copyHarpoonMarkedFiles()
+  local ok, harpoon = pcall(require, "harpoon")
+  if not ok then
+    vim.notify("Harpoon is not installed or failed to load", vim.log.levels.ERROR)
+    return
+  end
+
+  local marksList = harpoon:list()
+  if not marksList then
+    vim.notify("No harpoon list found", vim.log.levels.WARN)
+    return
+  end
+
+  local marks = marksList.items
+  if not marks or vim.tbl_isempty(marks) then
+    vim.notify("No harpoon marked files found", vim.log.levels.WARN)
+    return
+  end
+
+  local result = {}
+  for _, mark in ipairs(marks) do
+    local fullPath = mark.value or ""
+    if fullPath ~= "" then
+      local filename = vim.fn.fnamemodify(fullPath, ":t")
+      table.insert(result, "@" .. filename)
+    end
+  end
+
+  local str = table.concat(result, " ")
+  vim.fn.setreg("+", str)
+
+  return str
+end
+
+vim.keymap.set("n", "<leader>j@h", function()
+  vim.notify("Copied harpoon marks to clipboard: " .. copyHarpoonMarkedFiles(), vim.log.levels.INFO)
+end, { desc = "@ harpoon files" })
+
+vim.keymap.set("n", "<leader>jj", function()
+  local file = vim.fn.expand("%:p")
+  local line = vim.fn.line(".")
+  local col = vim.fn.col(".")
+  local cmd = string.format("code . && code -g %s:%d:%d", file, line, col)
+  copyHarpoonMarkedFiles()
+  os.execute(cmd)
+end, { desc = "Open in cursor" })
+
 vim.keymap.set("n", "<leader>O", vim.cmd.AerialToggle, { desc = "Toggle Aerial" })
 
 vim.keymap.set("n", "<leader>n", vim.cmd.UndotreeToggle, { desc = "Toggle Undotree" })
 
 vim.keymap.set("n", "<leader>D", vim.cmd.DBUIToggle, { desc = "Toggle Debug UI" })
-
-vim.keymap.set("n", "<leader>C", "<cmd>ChatGPT<cr>", { desc = "ChatGPT" })
 
 vim.keymap.set({ "n", "v" }, "<leader>go", "<cmd>Octo<cr>", { desc = "Octo" })
 vim.keymap.set("n", "<leader>gpl", "<cmd>Octo pr list<cr>", { desc = "list" })

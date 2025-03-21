@@ -7,7 +7,6 @@ return {
       },
       servers = {
         eslint = {},
-        cssls = {},
         vtsls = {
           cmd = {
             "yarn",
