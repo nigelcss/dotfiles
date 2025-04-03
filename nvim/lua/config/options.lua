@@ -13,6 +13,4 @@ vim.opt.spelllang = "en_us"
 vim.opt.spell = true
 vim.opt.spelloptions = "camel"
 
-vim.g.vimwiki_map_prefix = "<leader>W"
-
 vim.g.lazygit_config = false

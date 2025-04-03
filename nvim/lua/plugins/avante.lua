@@ -1,24 +1,19 @@
 return {
   {
     "yetone/avante.nvim",
-    event = "VeryLazy",
     lazy = false,
-    version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
+    build = "make",
     opts = {
-      -- add any opts here
-      -- for example
-      provider = "claude",
-      cursor_applying_provider = "groq",
+      provider = "gemini",
+      auto_suggestions_provider = "openai",
       behaviour = {
+        auto_suggestions = false,
         enable_cursor_planning_mode = true,
       },
-      vendors = {
-        groq = {
-          __inherited_from = "openai",
-          endpoint = "https://api.groq.com/openai/v1/",
-          model = "llama-3.3-70b-versatile",
-          max_tokens = 32768,
-        },
+      gemini = {
+        model = "gemini-2.5-pro-exp-03-25",
+        temperature = 0,
+        max_tokens = 100000,
       },
       claude = {
         endpoint = "https://api.anthropic.com",
@@ -28,22 +23,28 @@ return {
       },
       openai = {
         endpoint = "https://api.openai.com/v1",
-        model = "o3-mini", -- your desired model (or use gpt-4o, etc.)
-        timeout = 30000, -- timeout in milliseconds
-        temperature = 0, -- adjust if needed
-        max_tokens = 10000,
+        model = "o3-mini",
+        timeout = 30000,
+        temperature = 0,
+        max_tokens = 8192,
+      },
+      windows = {
+        width = 40,
+      },
+      file_selector = {
+        provider = "fzf",
+        provider_opts = {},
+      },
+      suggestion = {
+        debounce = 3000,
+        throttle = 3000,
       },
     },
-    -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-    build = "make",
-    -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
     dependencies = {
       "stevearc/dressing.nvim",
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
       --- The below dependencies are optional,
-      "echasnovski/mini.pick", -- for file_selector provider mini.pick
-      "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
       "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
       "ibhagwan/fzf-lua", -- for file_selector provider fzf
       "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons

@@ -4,7 +4,7 @@
 
 local Util = require("lazyvim.util")
 
-vim.keymap.set({ "n", "v" }, "<C-z>", "")
+vim.keymap.set({ "n", "v" }, "<C-z>", "<Nop>")
 
 vim.keymap.set("n", "ZZ", ":wqa<CR>", { desc = "Save all and quit" })
 vim.keymap.set("n", "<C-s>", "<cmd>wa<cr>", { desc = "Write all" })
@@ -228,11 +228,11 @@ local function copyHarpoonMarkedFiles()
   return str
 end
 
-vim.keymap.set("n", "<leader>j@h", function()
+vim.keymap.set("n", "<leader>ac@h", function()
   vim.notify("Copied harpoon marks to clipboard: " .. copyHarpoonMarkedFiles(), vim.log.levels.INFO)
 end, { desc = "@ harpoon files" })
 
-vim.keymap.set("n", "<leader>jj", function()
+vim.keymap.set("n", "<leader>acc", function()
   local file = vim.fn.expand("%:p")
   local line = vim.fn.line(".")
   local col = vim.fn.col(".")

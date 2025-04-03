@@ -10,6 +10,8 @@ vim.cmd([[
   augroup END
 ]])
 
+vim.cmd("cabbrev stop echo 'Suspending disabled'")
+
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = "*.tmpl",
   callback = function()
