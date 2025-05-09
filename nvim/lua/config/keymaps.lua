@@ -213,12 +213,19 @@ local function copyHarpoonMarkedFiles()
     return
   end
 
+  -- Get project root directory
+  local cwd = vim.fn.getcwd()
+
   local result = {}
   for _, mark in ipairs(marks) do
     local fullPath = mark.value or ""
     if fullPath ~= "" then
-      local filename = vim.fn.fnamemodify(fullPath, ":t")
-      table.insert(result, "@" .. filename)
+      -- Convert to path relative to project root
+      local relativePath = fullPath
+      if vim.startswith(fullPath, cwd) then
+        relativePath = fullPath:sub(#cwd + 2) -- +2 to remove the trailing slash
+      end
+      table.insert(result, "@" .. relativePath)
     end
   end
 
@@ -228,7 +235,7 @@ local function copyHarpoonMarkedFiles()
   return str
 end
 
-vim.keymap.set("n", "<leader>ac@h", function()
+vim.keymap.set("n", "<leader>@h", function()
   vim.notify("Copied harpoon marks to clipboard: " .. copyHarpoonMarkedFiles(), vim.log.levels.INFO)
 end, { desc = "@ harpoon files" })
 

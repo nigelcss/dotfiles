@@ -5,7 +5,7 @@ return {
     build = "make",
     opts = {
       provider = "gemini",
-      auto_suggestions_provider = "openai",
+      auto_suggestions_provider = "gemini",
       behaviour = {
         auto_suggestions = false,
         enable_cursor_planning_mode = true,
@@ -13,13 +13,13 @@ return {
       gemini = {
         model = "gemini-2.5-pro-exp-03-25",
         temperature = 0,
-        max_tokens = 100000,
+        max_tokens = 64000,
       },
       claude = {
         endpoint = "https://api.anthropic.com",
-        model = "claude-3-5-haiku-latest",
+        model = "claude-3-7-sonnet-latest",
         temperature = 0,
-        max_tokens = 8192,
+        max_tokens = 64000,
       },
       openai = {
         endpoint = "https://api.openai.com/v1",
