@@ -4,29 +4,37 @@ return {
     lazy = false,
     build = "make",
     opts = {
-      provider = "gemini",
-      auto_suggestions_provider = "gemini",
+      provider = "claude",
+      auto_suggestions_provider = "claude",
       behaviour = {
         auto_suggestions = false,
         enable_cursor_planning_mode = true,
       },
-      gemini = {
-        model = "gemini-2.5-pro-exp-03-25",
-        temperature = 0,
-        max_tokens = 64000,
-      },
-      claude = {
-        endpoint = "https://api.anthropic.com",
-        model = "claude-3-7-sonnet-latest",
-        temperature = 0,
-        max_tokens = 64000,
-      },
-      openai = {
-        endpoint = "https://api.openai.com/v1",
-        model = "o3-mini",
-        timeout = 30000,
-        temperature = 0,
-        max_tokens = 8192,
+      providers = {
+        gemini = {
+          model = "gemini-2.5-pro-exp-03-25",
+          extra_request_body = {
+            temperature = 0,
+            max_tokens = 64000,
+          },
+        },
+        claude = {
+          endpoint = "https://api.anthropic.com",
+          model = "claude-sonnet-4-0",
+          extra_request_body = {
+            temperature = 0,
+            max_tokens = 64000,
+          },
+        },
+        openai = {
+          endpoint = "https://api.openai.com/v1",
+          model = "o3-mini",
+          timeout = 30000,
+          extra_request_body = {
+            temperature = 0,
+            max_tokens = 8192,
+          },
+        },
       },
       windows = {
         width = 40,
