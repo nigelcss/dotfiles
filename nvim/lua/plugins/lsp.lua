@@ -6,7 +6,12 @@ return {
         enabled = false,
       },
       servers = {
-        eslint = {},
+        eslint = {
+          -- Force eslint to act as a formatter
+          on_attach = function(client)
+            client.server_capabilities.documentFormattingProvider = true
+          end,
+        },
         vtsls = {
           cmd = {
             "yarn",
@@ -19,18 +24,11 @@ return {
             return require("lspconfig").util.root_pattern(".yarn")(fname)
               or require("lspconfig").util.root_pattern("package.json", "tsconfig.json", ".git")(fname)
           end,
+          -- Prevent vtsls from acting as a formatter
+          on_attach = function(client)
+            client.server_capabilities.documentFormattingProvider = false
+          end,
         },
-      },
-      setup = {
-        eslint = function()
-          require("lazyvim.util").lsp.on_attach(function(client)
-            if client.name == "eslint" then
-              client.server_capabilities.documentFormattingProvider = true
-            elseif client.name == "vtsls" then
-              client.server_capabilities.documentFormattingProvider = false
-            end
-          end)
-        end,
       },
     },
   },
