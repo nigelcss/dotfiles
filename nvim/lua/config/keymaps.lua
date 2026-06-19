@@ -267,3 +267,67 @@ vim.keymap.set({ "n", "i", "v" }, "<A-h>", vim.cmd.TmuxResizeLeft, { desc = "Res
 vim.keymap.set({ "n", "i", "v" }, "<A-j>", vim.cmd.TmuxResizeDown, { desc = "Resize Down" })
 vim.keymap.set({ "n", "i", "v" }, "<A-k>", vim.cmd.TmuxResizeUp, { desc = "Resize Up" })
 vim.keymap.set({ "n", "i", "v" }, "<A-l>", vim.cmd.TmuxResizeRight, { desc = "Resize Right" })
+
+local function staged_hunks_to_qf(file_filter)
+  local cmd = "git diff --cached --unified=0 --no-color"
+  if file_filter then
+    cmd = cmd .. " -- " .. vim.fn.shellescape(file_filter)
+  end
+  local output = vim.fn.systemlist(cmd)
+  if vim.v.shell_error ~= 0 then
+    vim.notify("git diff failed", vim.log.levels.ERROR)
+    return
+  end
+
+  local qf_entries = {}
+  local current_file = nil
+
+  for _, line in ipairs(output) do
+    local file = line:match("^%+%+%+ b/(.*)")
+    if file then
+      current_file = file
+    end
+
+    local new_start, new_count = line:match("^@@ %-[%d,]+ %+(%d+),?(%d*) @@")
+    if new_start and current_file then
+      new_start = tonumber(new_start)
+      new_count = tonumber(new_count ~= "" and new_count or "1")
+      if new_count == 0 then
+        table.insert(qf_entries, {
+          filename = current_file,
+          lnum = new_start > 0 and new_start or 1,
+          col = 1,
+          text = "staged deletion",
+        })
+      else
+        table.insert(qf_entries, {
+          filename = current_file,
+          lnum = new_start,
+          col = 1,
+          text = string.format("staged hunk (%d line%s)", new_count, new_count == 1 and "" or "s"),
+        })
+      end
+    end
+  end
+
+  if #qf_entries == 0 then
+    vim.notify("No staged hunks found", vim.log.levels.INFO)
+    return
+  end
+
+  vim.fn.setqflist({}, " ", { title = "Staged Hunks", items = qf_entries })
+  vim.cmd("copen")
+end
+
+vim.keymap.set("n", "<leader>ghq", function()
+  local file = vim.fn.expand("%:.")
+  if file == "" then
+    vim.notify("No file associated with current buffer", vim.log.levels.WARN)
+    return
+  end
+  staged_hunks_to_qf(file)
+end, { desc = "Staged hunks to quickfix (file)" })
+
+vim.keymap.set("n", "<leader>ghQ", function()
+  staged_hunks_to_qf(nil)
+end, { desc = "Staged hunks to quickfix (all)" })

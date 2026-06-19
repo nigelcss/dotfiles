@@ -22,6 +22,24 @@ vim.keymap.set("n", "<C-j>", "]c", { desc = "Prev Change" })
 vim.keymap.set("n", "<C-k>", "[c", { desc = "Next Change" })
 vim.keymap.set("n", "<C-l>", ":diffget remote<CR>", { desc = "Get REMOTE" })
 
+vim.keymap.set("n", "<leader>d", function()
+  local bufs = {}
+  for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+    local buf = vim.api.nvim_win_get_buf(win)
+    if vim.bo[buf].buflisted or vim.wo[win].diff then
+      local name = vim.api.nvim_buf_get_name(buf)
+      if name ~= "" then
+        table.insert(bufs, vim.fn.fnameescape(name))
+      end
+    end
+  end
+  if #bufs >= 2 then
+    vim.cmd("botright split | terminal difft " .. bufs[1] .. " " .. bufs[2])
+  else
+    vim.notify("Need 2 diff buffers to run difftastic", vim.log.levels.WARN)
+  end
+end, { desc = "Semantic diff (difftastic)" })
+
 vim.keymap.set({ "n", "i", "v" }, "<A-h>", vim.cmd.TmuxResizeLeft, { desc = "Resize Left" })
 vim.keymap.set({ "n", "i", "v" }, "<A-j>", vim.cmd.TmuxResizeDown, { desc = "Resize Down" })
 vim.keymap.set({ "n", "i", "v" }, "<A-k>", vim.cmd.TmuxResizeUp, { desc = "Resize Up" })
