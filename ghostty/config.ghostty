@@ -1,0 +1,12 @@
+theme = Gruvbox Dark
+
+font-size = 14
+
+# Treat the macOS Option key as Alt/Meta so terminal apps (tmux, vim, shell)
+# receive M-… keybindings (e.g. option-hjkl pane resizing) instead of composing
+# Unicode characters. Matches the behaviour WezTerm provided.
+macos-option-as-alt = true
+
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
